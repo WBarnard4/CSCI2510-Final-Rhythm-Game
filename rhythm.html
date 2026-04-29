@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Title displayed in the browser tab -->
+  <title>Rhythm Game</title>
+
+  <!-- CSS for our game -->
+  <style>
+    * {
+      /* Remove any margin */
+      margin: 0px;
+
+      /* Never show scroll bars */
+      overflow: hidden;
+
+      height:100%;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- The canvas we will draw in -->
+  <canvas id="canv"></canvas>
+
+  <!-- Engine classes -->
+  <script src="./engine/Engine.js"></script>
+  <script src="./engine/GameObject.js"></script>
+  <script src="./engine/Time.js"></script>
+  <script src="./engine/Collisions.js"></script>
+  <script src="./engine/Input.js"></script>
+  <script src="./engine/Scene.js"></script>
+  <script src="./engine/Component.js"></script>
+  <script src="./engine/Globals.js"></script>
+  <script src="./engine/Events.js"></script>
+
+  <!-- Engine components -->
+  <script src="./engine/components/Transform.js"></script>
+  <script src="./engine/components/Circle.js"></script>
+  <script src="./engine/components/KeyboardMovement.js"></script>
+  <script src="./engine/components/MouseMovement.js"></script>
+  <script src="./engine/components/Text.js"></script>
+
+  <script src="./engine/components/Arrow.js"></script>
+  <script src="./engine/components/Box.js"></script>
+  <script src="./engine/components/Vector2.js"></script>
+  <script src="./engine/components/RigidBody.js"></script>
+
+  <!-- Game Components -->
+   <script src="./game_rhythm/components/HitZoneInput.js"></script>
+   <script src="./game_rhythm/components/NoteMovement.js"></script>
+   <script src="./game_rhythm/components/ScoreUpdater.js"></script>
+   <script src="./game_rhythm/components/MouseCollision.js"></script>
+   <script src="./game_rhythm/components/MetronomeController.js"></script>
+   <script src="./game_rhythm/components/LevelMakerController.js"></script>
+   <script src="./game_rhythm/components/NoteMiss.js"></script>
+   <script src="./game_rhythm/components/TimerController.js"></script>
+   <script src="./game_rhythm/components/PerfectController.js"></script>
+   <script src="./game_rhythm/components/ScoreDisplayController.js"></script>
+   <script src="./game_rhythm/components/EndLevelController.js"></script>
+
+  <!-- Game objects -->
+   <script src="./game_rhythm/gameObjects/HitZoneGameObject.js"></script>
+   <script src="./game_rhythm/gameObjects/NoteGameObject.js"></script>
+   <script src="./game_rhythm/gameObjects/ScoreGameObject.js"></script>
+   <script src="./game_rhythm/gameObjects/ButtonGameObject.js"></script>
+   <script src="./game_rhythm/gameObjects/MetronomeGameObject.js"></script>
+   <script src="./game_rhythm/gameObjects/LevelMakerGameObject.js"></script>
+   <script src="./game_rhythm/gameObjects/TimerGameObject.js"></script>
+   <script src="./game_rhythm/gameObjects/ConfettiGameObject.js"></script>
+   <script src="./game_rhythm/gameObjects/ScoreDisplayGameObject.js"></script>
+
+
+  <!-- Scenes -->
+   <script src="./game_rhythm/scenes/MainMenu.js"></script>
+   <script src="./game_rhythm/scenes/Scene01.js"></script>
+   <script src="./game_rhythm/scenes/Scene02.js"></script>
+   <script src="./game_rhythm/scenes/Scene03.js"></script>
+
+
+  <script>
+    // Engine-specific state variables
+    let canvas // A reference to the canvas element
+    let ctx   // A reference to the 2d drawing context in the canvas drawing element
+
+    Globals.score1 = 0
+    Globals.score2 = 0
+    Globals.score3 = 0
+    Globals.time = 0.0
+
+    Engine.nextScene = new MainMenu() //Assign the start scene (game-specific code)
+    Engine.start()
+    
+  </script>
+</body>
+
+</html>

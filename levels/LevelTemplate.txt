@@ -1,0 +1,2 @@
+(Size)  (Speed) (Start Position)
+(Note Lane)     (Beat)
